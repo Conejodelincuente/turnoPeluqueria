@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+header{
+    height: 40vh;
+    background-image: url(./img/hero_page.png);
+    background-size: cover;
+    background-position: center;
+
+}
+.title{
+    margin: 2rem;
+    width: 75vw;
+}
+
+h1{
+    font-size: 5rem;
+}
+p{
+    font-size: 2rem;
+}
