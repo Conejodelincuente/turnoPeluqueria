@@ -23,32 +23,29 @@ function elegirDia() {
     );
 
     //problema si no ingresa nada
-    if (!diaIngresado) {
-      let respuesta = prompt(
-        "No me dijiste nada mi rey, ¿Preferís irte? (si / no)"
+    if (diaIngresado === null) {
+      let confirmarSalida = confirm(
+        "¿Realmente quieres salir de la reserva de turnos?"
       );
-
-      if (!respuesta) {
-        alert("Chau amigo, nos vemos!");
-        return null;
-      }
-
-      if (respuesta === "si" || respuesta ==="Si") {
-        alert("Ok, nos vemos otro día");
-        return null;
-      } else if (respuesta === "no" || respuesta === "No") {
-        alert("Te vuelvo a preguntar, no te preocupes.");
-        continue;
+      if (confirmarSalida) {
+        alert("Chau amigo, nos vimooo!");
+        return null; 
       } else {
-        alert("No entendí. Te vuelvo a preguntar el día.");
-        continue;
+        alert("Ok, te pregunto de nuevo mi rey!");
+        continue; 
       }
+    }
+
+    // Si el usuario ingresa un string vacío
+    if (diaIngresado.trim() === "") {
+      alert("No ingresaste ningún día. Por favor, intentalo de nuevo mamerto");
+      continue;
     }
 
     //Por si lo pone en mayusculas:
     diaIngresado = diaIngresado.toLocaleLowerCase();
 
-    //probelmas con la stildes:
+    //probelmas con la tildes:
     if (diaIngresado === "miercoles") diaIngresado = "miércoles";
     if (diaIngresado === "sabado") diaIngresado = "sábado";
 
@@ -59,8 +56,6 @@ function elegirDia() {
     }
     alert("perfecto, estonces te doy " + diaIngresado);
     break;
-
-    
   }
 }
 elegirDia();
